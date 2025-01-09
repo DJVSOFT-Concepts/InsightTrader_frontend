@@ -21,13 +21,21 @@
             "outputPath": {
               "base": "dist/hyper",
               "browser": ""
-            }, 
+            },
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              {
+                "glob": "_redirects",
+                "input": "src",
+                "output": "/"
+              }
+            ],
             "styles": [
               "node_modules/@ctrl/ngx-emoji-mart/picker.css",
               "src/lib/frappe-gantt/index.min.css",
@@ -37,7 +45,7 @@
               "src/assets/scss/app-saas.scss",
               "src/styles.scss"
             ],
-            "scripts": [  
+            "scripts": [
               "node_modules/jsvectormap/dist/maps/world-merc.js",
               "node_modules/jsvectormap/dist/jsvectormap.min.js"
             ],
@@ -45,9 +53,21 @@
               "sweetalert2",
               "quill-delta",
               "@lib/frappe-gantt",
-              "moment","dayjs","apexcharts","@ckeditor/ckeditor5-build-classic","jsvectormap","jsvectormap/dist/maps/world.js","jsvectormap/dist/maps/us-merc-en.js",
-              "jsvectormap/dist/maps/russia.js","jsvectormap/dist/maps/canada.js","jsvectormap/dist/maps/iraq.js","jsvectormap/dist/maps/italy.js","jsvectormap/dist/maps/spain.js",
-              "dragula","can-use-dom","dropzone"
+              "moment",
+              "dayjs",
+              "apexcharts",
+              "@ckeditor/ckeditor5-build-classic",
+              "jsvectormap",
+              "jsvectormap/dist/maps/world.js",
+              "jsvectormap/dist/maps/us-merc-en.js",
+              "jsvectormap/dist/maps/russia.js",
+              "jsvectormap/dist/maps/canada.js",
+              "jsvectormap/dist/maps/iraq.js",
+              "jsvectormap/dist/maps/italy.js",
+              "jsvectormap/dist/maps/spain.js",
+              "dragula",
+              "can-use-dom",
+              "dropzone"
             ]
           },
           "configurations": {
@@ -68,10 +88,10 @@
               "optimization": {
                 "scripts": true,
                 "styles": {
-                    "minify": true,
-                    "inlineCritical": false
+                  "minify": true,
+                  "inlineCritical": false
                 }
-            }
+              }
             },
             "development": {
               "optimization": false,
