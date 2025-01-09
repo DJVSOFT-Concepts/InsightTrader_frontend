@@ -1,0 +1,22 @@
+<div class="card">
+    <div
+      class="d-flex card-header justify-content-between align-items-center"
+    >
+      <h4 class="header-title">Earnings Call Summary</h4>
+    </div>
+
+    <div class="card-body pt-0">
+      <div class="table-responsive">
+        <app-table
+        tableClass="table-striped dt-responsive nowrap w-100"
+        [columns]="columns"
+        [data]="dataList"
+        [itemsPerPage]="5"
+        [searchable]="true"
+      ></app-table>
+      </div>
+      <!-- end table-responsive-->
+    </div>
+    <!-- end card-body-->
+  </div>
+  <!-- end card-->

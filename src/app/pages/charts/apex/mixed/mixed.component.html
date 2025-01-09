@@ -1,0 +1,144 @@
+<app-pagetitle
+  title="Mixed Charts"
+  subtitle="Apex"
+  pagetitle="Hyper"
+></app-pagetitle>
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">Line & Column Chart</h4>
+        <div dir="ltr">
+          <div
+            id="line-column-mixed"
+            class="apex-charts"
+            data-colors="#727cf5,#0acf97"
+          >
+            <apx-chart
+              [series]="lineMixedChart.series!"
+              [chart]="lineMixedChart.chart!"
+              [stroke]="lineMixedChart.stroke!"
+              [labels]="lineMixedChart.labels!"
+              [xaxis]="lineMixedChart.xaxis!"
+              [colors]="lineMixedChart.colors!"
+              [yaxis]="lineMixedChart.yaxis!"
+              [legend]="lineMixedChart.legend!"
+              [grid]="lineMixedChart.grid!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">Multiple Y-Axis Chart</h4>
+        <div dir="ltr">
+          <div
+            id="multiple-yaxis-mixed"
+            class="apex-charts"
+            data-colors="#727cf5,#39afd1,#fa5c7c"
+          >
+              <apx-chart
+                [series]="multipleMixedChart.series!"
+                [chart]="multipleMixedChart.chart!"
+                [dataLabels]="multipleMixedChart.dataLabels!"
+                [stroke]="multipleMixedChart.stroke!"
+                [colors]="multipleMixedChart.colors!"
+                [xaxis]="multipleMixedChart.xaxis!"
+                [tooltip]="multipleMixedChart.tooltip!"
+                [yaxis]="multipleMixedChart.yaxis!"
+                [legend]="multipleMixedChart.legend!"
+                [grid]="multipleMixedChart.grid!"
+                [responsive]="multipleMixedChart.responsive!"
+              >
+              </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">Line & Area Chart</h4>
+        <div dir="ltr">
+          <div
+            id="line-area-mixed"
+            class="apex-charts"
+            data-colors="#0acf97,#fa5c7c"
+          >
+            <apx-chart
+              [series]="lineareaChart.series!"
+              [chart]="lineareaChart.chart!"
+              [stroke]="lineareaChart.stroke!"
+              [fill]="lineareaChart.fill!"
+              [labels]="lineareaChart.labels!"
+              [markers]="lineareaChart.markers!"
+              [legend]="lineareaChart.legend!"
+              [colors]="lineareaChart.colors!"
+              [yaxis]="lineareaChart.yaxis!"
+              [tooltip]="lineareaChart.tooltip!"
+              [grid]="lineareaChart.grid!"
+              [responsive]="lineareaChart.responsive!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">Line, Column & Area Chart</h4>
+        <div dir="ltr">
+          <div
+            id="all-mixed"
+            class="apex-charts"
+            data-colors="#727cf5,#39afd1,#fa5c7c"
+          >
+            <apx-chart
+              [series]="linecolumnareaChart.series!"
+              [chart]="linecolumnareaChart.chart!"
+              [stroke]="linecolumnareaChart.stroke!"
+              [plotOptions]="linecolumnareaChart.plotOptions!"
+              [colors]="linecolumnareaChart.colors!"
+              [fill]="linecolumnareaChart.fill!"
+              [labels]="linecolumnareaChart.labels!"
+              [markers]="linecolumnareaChart.markers!"
+              [legend]="linecolumnareaChart.legend!"
+              [xaxis]="linecolumnareaChart.xaxis!"
+              [yaxis]="linecolumnareaChart.yaxis!"
+              [tooltip]="linecolumnareaChart.tooltip!"
+              [grid]="linecolumnareaChart.grid!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->

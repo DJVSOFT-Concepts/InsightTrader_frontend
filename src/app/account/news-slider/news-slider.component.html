@@ -1,0 +1,70 @@
+<div id="newsSlider" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button 
+        *ngFor="let news of newsArticles; let i = index" 
+        [class.active]="i === 0" 
+        data-bs-target="#newsSlider" 
+        [attr.data-bs-slide-to]="i"
+        [attr.text]="i"
+        >
+        
+    </button>
+    </div>
+  
+    <!-- Slides -->
+    <div class="carousel-inner">
+      <div 
+        class="carousel-item" 
+        *ngFor="let news of newsArticles; let i = index" 
+        [class.active]="i === 0">
+        <div class="d-flex p-4 bg-primary text-white rounded">
+          <div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="fw-bold">{{ news.title }}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ news.summary }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <a [href]="news.url" target="_blank" class="btn btn-light">Read More</a>
+                </div>
+            </div>
+            
+            
+            
+          </div>
+          <div>
+            <img [src]="news.banner_image || 'assets/default-news.jpg'" 
+                 alt="{{ news.title }}" 
+                 class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Controls -->
+   
+    <button style="width:20px;"
+      class="carousel-control-prev" 
+      href="#newsSlider" 
+      type="button" 
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button style="width:20px;"
+      class="carousel-control-next" 
+      href="#newsSlider" 
+      type="button" 
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>   
+</div>
+  

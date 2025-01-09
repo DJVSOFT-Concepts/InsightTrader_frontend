@@ -1,0 +1,55 @@
+<div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Market Sentiment</h3>
+    </div>
+    <div class="card-body">
+      <div *ngIf="loading" class="text-center">
+        <span>Loading news sentiment data...</span>
+      </div>
+      <div *ngIf="!loading && sentimentData.length > 0; else noData">
+        <div *ngFor="let item of sentimentData" class="mb-3">
+            <a
+            [href]="item.dataUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-decoration-none"
+          >
+          <div class="d-flex align-items-center p-3 border rounded shadow-sm">
+            <!-- Banner image -->
+            <div class="me-3">
+              <img
+              [src]="item.imageUrl || 'https://via.placeholder.com/150'"
+                alt="News Image"
+                class="img-fluid rounded"
+                style="height: auto; width: 150px;"
+              />
+            </div>
+  
+            <!-- News content -->
+            <div class="flex-grow-1">
+              <h5 class="mb-1">{{ item.headline }}</h5>
+              <p class="mb-0 text-muted">
+                Trend: 
+                <span [ngClass]="getBadgeClass(item.sentiment)" class="badge px-2 py-1">
+                  {{ item.sentiment | titlecase }}
+                </span>
+                <span class="ms-2">
+                  Impact: 
+                  <strong [ngClass]="{'text-success': item.impact > 0, 'text-danger': item.impact < 0}">
+                    {{ item.impact }}%
+                  </strong>
+                </span>
+              </p>
+            </div>
+          </div>
+
+        </a>
+
+        </div>
+      </div>
+      <ng-template #noData>
+        <p class="text-center text-muted">No sentiment data available.</p>
+      </ng-template>
+    </div>
+  </div>
+  

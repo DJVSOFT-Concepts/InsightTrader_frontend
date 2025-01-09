@@ -1,0 +1,206 @@
+<app-pagetitle
+  title="RadialBar Charts"
+  subtitle="Apex"
+  pagetitle="Hyper"
+></app-pagetitle>
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-4">Basic RadialBar Chart</h4>
+        <div dir="ltr">
+          <div id="basic-radialbar" class="apex-charts" data-colors="#39afd1">
+            <apx-chart
+              [series]="radialbarChart.series!"
+              [stroke]="radialbarChart.stroke!"
+              [chart]="radialbarChart.chart!"
+              [labels]="radialbarChart.labels!"
+              [colors]="radialbarChart.colors!"
+              [plotOptions]="radialbarChart.plotOptions!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-4">Multiple RadialBars</h4>
+        <div dir="ltr">
+          <div
+            id="multiple-radialbar"
+            class="apex-charts"
+            data-colors="#6c757d,#ffbc00,#727cf5,#0acf97"
+          >
+            <apx-chart
+              [series]="multipleradialbarChart.series!"
+              [responsive]="multipleradialbarChart.responsive!"
+              [chart]="multipleradialbarChart.chart!"
+              [labels]="multipleradialbarChart.labels!"
+              [colors]="multipleradialbarChart.colors!"
+              [plotOptions]="multipleradialbarChart.plotOptions!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-4">Circle Chart - Custom Angle</h4>
+        <div class="text-center" dir="ltr">
+          <div
+            id="circle-angle-radial"
+            class="apex-charts"
+            data-colors="#0acf97,#727cf5,#fa5c7c,#ffbc00"
+          >
+            <apx-chart
+              [series]="circleradialbarChart.series!"
+              [responsive]="circleradialbarChart.responsive!"
+              [chart]="circleradialbarChart.chart!"
+              [labels]="circleradialbarChart.labels!"
+              [colors]="circleradialbarChart.colors!"
+              [plotOptions]="circleradialbarChart.plotOptions!"
+              [legend]="circleradialbarChart.legend!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-4">Circle Chart with Image</h4>
+        <div dir="ltr">
+          <div id="image-radial" class="apex-charts">
+            <apx-chart
+              [series]="imageradialbarChart.series!"
+              [responsive]="imageradialbarChart.responsive!"
+              [chart]="imageradialbarChart.chart!"
+              [labels]="imageradialbarChart.labels!"
+              [colors]="imageradialbarChart.colors!"
+              [plotOptions]="imageradialbarChart.plotOptions!"
+              [stroke]="imageradialbarChart.stroke!"
+              [fill]="imageradialbarChart.fill!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-4">Stroked Circular Guage</h4>
+        <div dir="ltr">
+          <div
+            id="stroked-guage-radial"
+            class="apex-charts"
+            data-colors="#727cf5"
+          >
+              <apx-chart
+                [series]="guageradialbarChart.series!"
+                [responsive]="guageradialbarChart.responsive!"
+                [chart]="guageradialbarChart.chart!"
+                [labels]="guageradialbarChart.labels!"
+                [colors]="guageradialbarChart.colors!"
+                [plotOptions]="guageradialbarChart.plotOptions!"
+                [stroke]="guageradialbarChart.stroke!"
+                [fill]="guageradialbarChart.fill!"
+              >
+              </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-4">Gradient Circular Chart</h4>
+        <div dir="ltr">
+          <div
+            id="gradient-chart"
+            class="apex-charts"
+            data-colors="#8f75da,#727cf5"
+          >
+            <apx-chart
+              [series]="gradientradialbarChart.series!"
+              [chart]="gradientradialbarChart.chart!"
+              [labels]="gradientradialbarChart.labels!"
+              [plotOptions]="gradientradialbarChart.plotOptions!"
+              [stroke]="gradientradialbarChart.stroke!"
+              [fill]="gradientradialbarChart.fill!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-4">Semi Circle Gauge</h4>
+        <div dir="ltr">
+          <div id="semi-circle-gauge" class="apex-charts" data-colors="#727cf5">
+            <apx-chart
+              [series]="semicircleQuageChart.series!"
+              [chart]="semicircleQuageChart.chart!"
+              [labels]="semicircleQuageChart.labels!"
+              [plotOptions]="semicircleQuageChart.plotOptions!"
+              [grid]="semicircleQuageChart.grid!"
+              [colors]="semicircleQuageChart.colors!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->

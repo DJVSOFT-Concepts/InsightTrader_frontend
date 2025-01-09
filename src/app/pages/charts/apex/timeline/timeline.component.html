@@ -1,0 +1,156 @@
+<app-pagetitle
+  title="Timeline Charts"
+  subtitle="Apex"
+  pagetitle="Hyper"
+></app-pagetitle>
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-3">Basic Timeline</h4>
+        <div dir="ltr">
+          <div id="basic-timeline" class="apex-charts" data-colors="#fa6767">
+            <apx-chart
+              [series]="timelineChart.series!"
+              [chart]="timelineChart.chart!"
+              [colors]="timelineChart.colors!"
+              [plotOptions]="timelineChart.plotOptions!"
+              [xaxis]="timelineChart.xaxis!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-3">Distributed Timeline</h4>
+        <div dir="ltr">
+          <div
+            id="distributed-timeline"
+            class="apex-charts"
+            data-colors="#727cf5,#0acf97,#fa5c7c,#6c757d,#39afd1"
+          >
+            <apx-chart
+              [series]="distributedChart.series!"
+              [chart]="distributedChart.chart!"
+              [plotOptions]="distributedChart.plotOptions!"
+              [dataLabels]="distributedChart.dataLabels!"
+              [yaxis]="distributedChart.yaxis!"
+              [xaxis]="distributedChart.xaxis!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-3">Multi Series Timeline</h4>
+
+        <div dir="ltr">
+          <div
+            id="multi-series-timeline"
+            class="apex-charts"
+            data-colors="#6c757d,#39afd1"
+          >
+            <apx-chart
+              [series]="multitimelineChart.series!"
+              [chart]="multitimelineChart.chart!"
+              [plotOptions]="multitimelineChart.plotOptions!"
+              [dataLabels]="multitimelineChart.dataLabels!"
+              [fill]="multitimelineChart.fill!"
+              [colors]="multitimelineChart.colors!"
+              [xaxis]="multitimelineChart.xaxis!"
+              [legend]="multitimelineChart.legend!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-3">Advanced Timeline</h4>
+        <div dir="ltr">
+          <div
+            id="advanced-timeline"
+            class="apex-charts"
+            data-colors="#727cf5,#0acf97,#fa5c7c"
+          >
+            <apx-chart
+              [series]="advancedtimelineChart.series!"
+              [chart]="advancedtimelineChart.chart!"
+              [plotOptions]="advancedtimelineChart.plotOptions!"
+              [dataLabels]="advancedtimelineChart.dataLabels!"
+              [xaxis]="advancedtimelineChart.xaxis!"
+              [stroke]="advancedtimelineChart.stroke!"
+              [colors]="advancedtimelineChart.colors!"
+              [fill]="advancedtimelineChart.fill!"
+              [legend]="advancedtimelineChart.legend!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-3">Multiple Series - Group Rows</h4>
+        <div dir="ltr">
+          <div
+            id="group-rows-timeline"
+            class="apex-charts"
+            data-colors="#727cf5,#0acf97,#fa5c7c,#6c757d,#39afd1,#ffc35a, #eef2f7, #313a46,#3577f1, #0ab39c, #f0a548,#68eaff"
+          >
+            <apx-chart
+              [series]="grouptimelineChart.series!"
+              [chart]="grouptimelineChart.chart!"
+              [plotOptions]="grouptimelineChart.plotOptions!"
+              [colors]="grouptimelineChart.colors!"
+              [xaxis]="grouptimelineChart.xaxis!"
+              [fill]="grouptimelineChart.fill!"
+              [legend]="grouptimelineChart.legend!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->

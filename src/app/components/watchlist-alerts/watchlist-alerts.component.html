@@ -1,0 +1,79 @@
+<div class="card">
+    <div class="card-header bg-primary text-white">
+      <h4 class="card-title mb-0">Watchlist with Custom Alerts</h4>
+    </div>
+    <div class="card-body">
+      <!-- Add Stock Form -->
+      <form (ngSubmit)="addStock()" class="row g-3 align-items-end">
+        <div class="col-md-4">
+          <label for="stockSymbol" class="form-label fw-bold">Stock Symbol</label>
+          <input
+            type="text"
+            id="stockSymbol"
+            [(ngModel)]="newStock.symbol"
+            name="symbol"
+            class="form-control"
+            placeholder="e.g., AAPL"
+            required
+          />
+        </div>
+        <div class="col-md-4">
+          <label for="alertType" class="form-label fw-bold">Alert Type</label>
+          <select
+            id="alertType"
+            [(ngModel)]="newStock.alert_type"
+            name="alertType"
+            class="form-select"
+            required
+          >
+            <option value="price">Price Change</option>
+            <option value="earnings">Earnings Call</option>
+            <option value="news">News Update</option>
+          </select>
+        </div>
+        <div class="col-md-4 d-flex">
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="mdi mdi-plus"></i> Add to Watchlist
+          </button>
+        </div>
+      </form>
+  
+      <!-- Watchlist Table -->
+      <div class="table-responsive mt-4" *ngIf="watchlist.length > 0; else emptyState">
+        <table class="table table-hover table-striped align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>#</th>
+              <th>Stock Symbol</th>
+              <th>Alert Type</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let stock of watchlist; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td><strong>{{ stock.symbol }}</strong></td>
+              <td>{{ stock.alert_type | titlecase }}</td>
+              <td>
+                <button
+                  class="btn btn-outline-danger btn-sm"
+                  (click)="removeStock(stock.id)"
+                >
+                  <i class="mdi mdi-delete"></i> Remove
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <!-- Empty State -->
+      <ng-template #emptyState>
+        <div class="text-center text-muted">
+          <i class="mdi mdi-alert-circle-outline display-4"></i>
+          <p class="mt-2">Your watchlist is empty. Add some stocks!</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  

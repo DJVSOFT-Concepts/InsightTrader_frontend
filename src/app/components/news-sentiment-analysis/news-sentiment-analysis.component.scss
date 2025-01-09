@@ -1,0 +1,38 @@
+// Ensure shadow and border consistency
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .border {
+    border: 1px solid #e5e5e5;
+  }
+  
+
+
+  // Add consistent styling for the card items
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  // Tile container with flexbox alignment
+  .d-flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  // Image styling
+  img {
+    object-fit: cover;
+    border-radius: 8px;
+    max-height: 150px; // Ensure consistent image height
+  }
+  
+  // Responsive tweaks (if needed)
+  @media (max-width: 768px) {
+    img {
+      height: 120px;
+    }
+  }
+  

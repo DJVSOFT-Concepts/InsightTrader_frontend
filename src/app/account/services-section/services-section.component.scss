@@ -1,0 +1,19 @@
+.services-section {
+    background-color: #f8f9fa;
+  }
+  
+  .card {
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card .icon {
+    font-size: 3rem;
+    color: #007bff;
+  }
+  

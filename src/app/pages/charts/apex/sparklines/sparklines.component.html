@@ -1,0 +1,213 @@
+<app-pagetitle
+  title="Sparklines Charts"
+  subtitle="Apex"
+  pagetitle="Hyper"
+></app-pagetitle>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row" dir="ltr">
+          <div class="col-md-4">
+            <div id="spark1" class="apex-charts" data-colors="#DCE6EC">
+              <apx-chart
+                [series]="spark1Chart.series!"
+                [chart]="spark1Chart.chart!"
+                [stroke]="spark1Chart.stroke!"
+                [fill]="spark1Chart.fill!"
+                [yaxis]="spark1Chart.yaxis!"
+                [colors]="spark1Chart.colors!"
+                [title]="spark1Chart.title!"
+                [subtitle]="spark1Chart.subtitle!"
+              >
+              </apx-chart>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div id="spark2" class="apex-charts" data-colors="#DCE6EC">
+              <apx-chart
+                [series]="spark2Chart.series!"
+                [chart]="spark2Chart.chart!"
+                [stroke]="spark2Chart.stroke!"
+                [fill]="spark2Chart.fill!"
+                [yaxis]="spark2Chart.yaxis!"
+                [colors]="spark2Chart.colors!"
+                [title]="spark2Chart.title!"
+                [subtitle]="spark2Chart.subtitle!"
+              >
+              </apx-chart>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div id="spark3" class="apex-charts" data-colors="#0acf97">
+              <apx-chart
+                [series]="spark3Chart.series!"
+                [chart]="spark3Chart.chart!"
+                [stroke]="spark3Chart.stroke!"
+                [fill]="spark3Chart.fill!"
+                [xaxis]="spark3Chart.xaxis!"
+                [yaxis]="spark3Chart.yaxis!"
+                [colors]="spark3Chart.colors!"
+                [title]="spark3Chart.title!"
+                [subtitle]="spark3Chart.subtitle!"
+              >
+              </apx-chart>
+            </div>
+          </div>
+        </div>
+        <!-- end row -->
+
+        <div class="row mt-3">
+          <div class="col-12">
+            <div class="table-responsive">
+              <table class="table table-centered mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th>Total Value</th>
+                    <th>Percentage of Portfolio</th>
+                    <th>Last 10 days</th>
+                    <th>Volume</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>$32,554</td>
+                    <td>15%</td>
+                    <td>
+                      <div id="chart1" data-colors="#727cf5">
+                        <apx-chart
+                          [series]="chart1.series!"
+                          [chart]="chart1.chart!"
+                          [stroke]="chart1.stroke!"
+                          [markers]="chart1.markers!"
+                          [colors]="chart1.colors!"
+                          [tooltip]="chart1.tooltip!"
+                        >
+                        </apx-chart>
+                      </div>
+                    </td>
+                    <td>
+                      <div id="chart5" data-colors="#727cf5">
+                        <apx-chart
+                          [series]="chart5.series!"
+                          [chart]="chart5.chart!"
+                          [plotOptions]="chart5.plotOptions!"
+                          [colors]="chart5.colors!"
+                          [labels]="chart5.labels!"
+                          [xaxis]="chart5.xaxis!"
+                          [tooltip]="chart5.tooltip!"
+                        >
+                        </apx-chart>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>$23,533</td>
+                    <td>7%</td>
+                    <td>
+                      <div id="chart2" data-colors="#0acf97">
+                        <apx-chart
+                          [series]="chart2.series!"
+                          [chart]="chart2.chart!"
+                          [stroke]="chart2.stroke!"
+                          [markers]="chart2.markers!"
+                          [colors]="chart2.colors!"
+                          [tooltip]="chart2.tooltip!"
+                        >
+                        </apx-chart>
+                      </div>
+                    </td>
+                    <td>
+                      <div id="chart6" data-colors="#0acf97">
+                        <apx-chart
+                          [series]="chart6.series!"
+                          [chart]="chart6.chart!"
+                          [plotOptions]="chart6.plotOptions!"
+                          [colors]="chart6.colors!"
+                          [labels]="chart6.labels!"
+                          [xaxis]="chart6.xaxis!"
+                          [tooltip]="chart6.tooltip!"
+                        >
+                        </apx-chart>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>$54,276</td>
+                    <td>9%</td>
+                    <td>
+                      <div id="chart3" data-colors="#ffbc00">
+                        <apx-chart
+                          [series]="chart3.series!"
+                          [chart]="chart3.chart!"
+                          [stroke]="chart3.stroke!"
+                          [markers]="chart3.markers!"
+                          [colors]="chart3.colors!"
+                          [tooltip]="chart3.tooltip!"
+                        >
+                        </apx-chart>
+                      </div>
+                    </td>
+                    <td>
+                      <div id="chart7" data-colors="#ffbc00">
+                        <apx-chart
+                          [series]="chart7.series!"
+                          [chart]="chart7.chart!"
+                          [plotOptions]="chart7.plotOptions!"
+                          [colors]="chart7.colors!"
+                          [labels]="chart7.labels!"
+                          [xaxis]="chart7.xaxis!"
+                          [tooltip]="chart7.tooltip!"
+                        >
+                        </apx-chart>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>$11,533</td>
+                    <td>2%</td>
+                    <td>
+                      <div id="chart4" data-colors="#fa5c7c">
+                        <apx-chart
+                          [series]="chart4.series!"
+                          [chart]="chart4.chart!"
+                          [stroke]="chart4.stroke!"
+                          [markers]="chart4.markers!"
+                          [colors]="chart4.colors!"
+                          [tooltip]="chart4.tooltip!"
+                        >
+                        </apx-chart>
+                      </div>
+                    </td>
+                    <td>
+                      <div id="chart8" data-colors="#fa5c7c">
+                        <apx-chart
+                          [series]="chart8.series!"
+                          [chart]="chart8.chart!"
+                          [plotOptions]="chart8.plotOptions!"
+                          [colors]="chart8.colors!"
+                          [labels]="chart8.labels!"
+                          [xaxis]="chart8.xaxis!"
+                          [tooltip]="chart8.tooltip!"
+                        >
+                        </apx-chart>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- end table-responsive -->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row-->
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->

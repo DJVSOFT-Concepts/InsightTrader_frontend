@@ -1,0 +1,27 @@
+<app-pagetitle title="Lucide Icons" subtitle="Icons" pagetitle="Hyper"></app-pagetitle>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title mb-2">
+                    Lucide Icons
+                    <a href="https://lucide.dev/" target="_blank" class="ms-2 d-inline-flex align-items-center">
+                        <span class="badge bg-primary align-middle">Docs <i class="mdi mdi-link font-12"></i></span>
+                    </a>
+                </h4>
+
+                <p class="card-title-desc mb-2">Use <code>&lt;i data-lucide="accessibility"&gt;&lt;/i&gt;</code></p>
+
+                <div class="row row-cols-lg-5 row-cols-md-3 row-cols-1 g-2 font-15 icons-list-demo" id="icons">
+                    @for(icon of iconsData;track $index){
+                    <div>
+                        <lucide-angular [name]="icon" class=""></lucide-angular>
+                        <span class="ms-2">{{icon}}</span>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<app-pagetitle
+  title="Bubble Charts"
+  subtitle="Apex"
+  pagetitle="Hyper"
+></app-pagetitle>
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">Simple Bubble Chart</h4>
+        <div dir="ltr">
+          <div
+            id="simple-bubble"
+            class="apex-charts"
+            data-colors="#727cf5,#ffbc00,#fa5c7c"
+          >
+            <apx-chart
+              [chart]="bubbleChart.chart!"
+              [dataLabels]="bubbleChart.dataLabels!"
+              [series]="bubbleChart.series!"
+              [fill]="bubbleChart.fill!"
+              [colors]="bubbleChart.colors!"
+              [xaxis]="bubbleChart.xaxis!"
+              [yaxis]="bubbleChart.yaxis!"
+              [grid]="bubbleChart.grid!"
+              [legend]="bubbleChart.legend!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">3D Bubble Chart</h4>
+        <div dir="ltr">
+          <div
+            id="second-bubble"
+            class="apex-charts"
+            data-colors="#727cf5,#0acf97,#fa5c7c,#39afd1"
+          >
+            <apx-chart
+              [chart]="secondbubbleChart.chart!"
+              [dataLabels]="secondbubbleChart.dataLabels!"
+              [series]="secondbubbleChart.series!"
+              [fill]="secondbubbleChart.fill!"
+              [colors]="secondbubbleChart.colors!"
+              [xaxis]="secondbubbleChart.xaxis!"
+              [yaxis]="secondbubbleChart.yaxis!"
+              [grid]="secondbubbleChart.grid!"
+              [legend]="secondbubbleChart.legend!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->

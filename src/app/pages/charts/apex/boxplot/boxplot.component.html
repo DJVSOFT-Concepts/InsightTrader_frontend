@@ -1,0 +1,95 @@
+<app-pagetitle
+  title="Boxplot Charts"
+  subtitle="Apex"
+  pagetitle="Hyper"
+></app-pagetitle>
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-4">Basic Boxplot</h4>
+        <div dir="ltr">
+          <div
+            id="basic-boxplot"
+            class="apex-charts"
+            data-colors="#727cf5,#0acf97"
+          >
+            <apx-chart
+              [series]="boxplotChart.series!"
+              [chart]="boxplotChart.chart!"
+              [plotOptions]="boxplotChart.plotOptions!"
+              [stroke]="boxplotChart.stroke!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-4">Scatter Boxplot</h4>
+        <div dir="ltr">
+          <div
+            id="scatter-boxplot"
+            class="apex-charts"
+            data-colors="#fa5c7c,#6c757d"
+          >
+            <apx-chart
+              [series]="scatterChart.series!"
+              [chart]="scatterChart.chart!"
+              [plotOptions]="scatterChart.plotOptions!"
+              [stroke]="scatterChart.stroke!"
+              [legend]="scatterChart.legend!"
+              [xaxis]="scatterChart.xaxis!"
+              [grid]="scatterChart.grid!"
+              [tooltip]="scatterChart.tooltip!"
+              [plotOptions]="scatterChart.plotOptions!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title mb-4">Horizontal BoxPlot</h4>
+        <div dir="ltr">
+          <div
+            id="horizontal-boxplot"
+            class="apex-charts"
+            data-colors="#727cf5,#0acf97,#e3eaef"
+          >
+            <apx-chart
+              [series]="horizontalChart.series!"
+              [chart]="horizontalChart.chart!"
+              [plotOptions]="horizontalChart.plotOptions!"
+              [stroke]="horizontalChart.stroke!"
+              [xaxis]="horizontalChart.xaxis!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->

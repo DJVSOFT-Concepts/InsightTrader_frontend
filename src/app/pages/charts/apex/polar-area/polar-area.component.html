@@ -1,0 +1,69 @@
+<app-pagetitle
+  title="Polar Area Charts"
+  subtitle="Apex"
+  pagetitle="Hyper"
+></app-pagetitle>
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">Basic Polar Area Chart</h4>
+        <div dir="ltr">
+          <div
+            id="basic-polar-area"
+            class="apex-charts"
+            data-colors="#727cf5,#6c757d,#0acf97,#fa5c7c,#ffbc00,#39afd1"
+          >
+            <apx-chart
+              [series]="basicPolarChart.series!"
+              [chart]="basicPolarChart.chart!"
+              [stroke]="basicPolarChart.stroke!"
+              [labels]="basicPolarChart.labels!"
+              [colors]="basicPolarChart.colors!"
+              [legend]="basicPolarChart.legend!"
+              [responsive]="basicPolarChart.responsive!"
+              [fill]="basicPolarChart.fill!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">Monochrome Polar Area</h4>
+        <div dir="ltr">
+          <div
+            id="monochrome-polar-area"
+            class="apex-charts"
+            data-colors="#6c757d"
+          >
+            <apx-chart
+              [series]="monochromePolarChart.series!"
+              [chart]="monochromePolarChart.chart!"
+              [stroke]="monochromePolarChart.stroke!"
+              [labels]="monochromePolarChart.labels!"
+              [yaxis]="monochromePolarChart.yaxis!"
+              [legend]="monochromePolarChart.legend!"
+              [plotOptions]="monochromePolarChart.plotOptions!"
+              [fill]="monochromePolarChart.fill!"
+              [theme]="monochromePolarChart.theme!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->

@@ -1,0 +1,117 @@
+<app-pagetitle
+  title="Treemap Charts"
+  subtitle="Apex"
+  pagetitle="Hyper"
+></app-pagetitle>
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">Basic Treemap</h4>
+        <div dir="ltr">
+          <div id="basic-treemap" class="apex-charts" data-colors="#39afd1">
+            <apx-chart
+              [series]="treemapChart.series!"
+              [chart]="treemapChart.chart!"
+              [colors]="treemapChart.colors!"
+              [title]="treemapChart.title!"
+              [legend]="treemapChart.legend!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">Treemap Multiple Series</h4>
+        <div dir="ltr">
+          <div
+            id="multiple-treemap"
+            class="apex-charts"
+            data-colors="#fa5c7c,#6c757d"
+          >
+            <apx-chart
+              [series]="multipletreemapChart.series!"
+              [chart]="multipletreemapChart.chart!"
+              [colors]="multipletreemapChart.colors!"
+              [title]="multipletreemapChart.title!"
+              [legend]="multipletreemapChart.legend!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->
+
+<div class="row">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">Distributed Treemap</h4>
+        <div dir="ltr">
+          <div
+            id="distributed-treemap"
+            class="apex-charts"
+            data-colors="#727cf5,#0acf97,#fa5c7c,#6c757d,#39afd1,#ffc35a, #eef2f7, #313a46"
+          >
+            <apx-chart
+              [series]="distributedtreemapChart.series!"
+              [chart]="distributedtreemapChart.chart!"
+              [colors]="distributedtreemapChart.colors!"
+              [title]="distributedtreemapChart.title!"
+              [legend]="distributedtreemapChart.legend!"
+              [plotOptions]="distributedtreemapChart.plotOptions!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">Color Range Treemap</h4>
+        <div dir="ltr">
+          <div
+            id="color-range-treemap"
+            class="apex-charts"
+            data-colors="#727cf5,#39afd1"
+          >
+            <apx-chart
+              [series]="rangetreemapChart.series!"
+              [chart]="rangetreemapChart.chart!"
+              [dataLabels]="rangetreemapChart.dataLabels!"
+              [title]="rangetreemapChart.title!"
+              [legend]="rangetreemapChart.legend!"
+              [plotOptions]="rangetreemapChart.plotOptions!"
+            >
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <!-- end card body-->
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col-->
+</div>
+<!-- end row-->

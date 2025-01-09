@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-body">
+      <h4 class="header-title mb-3">Real-Time Stock Prices</h4>
+      <div class="table-responsive">
+        <table class="table table-centered table-nowrap mb-0">
+          <thead class="table-light">
+            <tr>
+              <th>Symbol</th>
+              <th>Open (USD)</th>
+              <th>High (USD)</th>
+              <th>Low (USD)</th>
+              <th>Price (USD)</th>
+              <th>Last Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Display loading spinner -->
+            <tr *ngIf="loading">
+              <td colspan="6" class="text-center">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </td>
+            </tr>
+  
+            <!-- Display stock prices -->
+            <tr *ngFor="let stock of stockPrices">
+              <td>{{ stock.symbol }}</td>
+              <td>{{ stock.open | currency: 'USD' }}</td>
+              <td>{{ stock.high | currency: 'USD' }}</td>
+              <td>{{ stock.low | currency: 'USD' }}</td>
+              <td>{{ stock.price | currency: 'USD' }}</td>
+              <td>{{ stock.timestamp }}</td>
+            </tr>
+  
+            <!-- Display message when no data -->
+            <tr *ngIf="!loading && stockPrices.length === 0">
+              <td colspan="6" class="text-center">No data available</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

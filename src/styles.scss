@@ -1,0 +1,53 @@
+@use 'stream-chat-angular/src/assets/styles/scss/index.scss';
+/* You can add global styles to this file, and also import other style files */
+@import 'nouislider/dist/nouislider.css';
+
+@import 'quill/dist/quill.bubble.css';
+// or
+@import 'quill/dist/quill.snow.css';
+@import 'jsvectormap/dist/jsvectormap.min.css';
+
+.apex-charts {
+  div {
+    min-height: 0 !important;
+  }
+}
+
+.emoji-mart {
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+}
+
+.emoji-mart-preview {
+  display: none;
+}
+
+
+
+
+// html {
+//   height: 100%;
+// }
+
+// body {
+//   margin: 0;
+//   height: 100%;
+// }
+
+#root {
+  display: flex;
+  height: 100%;
+
+  stream-channel-list {
+    width: 30%;
+  }
+
+  stream-channel {
+    width: 70%;
+  }
+
+  stream-thread {
+    width: 45%;
+  }
+}

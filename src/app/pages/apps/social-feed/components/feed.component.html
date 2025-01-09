@@ -1,0 +1,80 @@
+<div class="card">
+    <div class="card-body p-0">
+      <ul ngbNav #nav="ngbNav" class="nav nav-tabs nav-bordered">
+        <li [ngbNavItem]="1" class="nav-item">
+          <a
+            ngbNavLink
+            data-bs-toggle="tab"
+            aria-expanded="true"
+            class="nav-link px-3 py-2"
+          >
+            <i
+              class="mdi mdi-book-open-variant font-18 d-md-none d-block"
+            ></i>
+            <span class="d-none d-md-block">News</span>
+          </a>
+          <ng-template ngbNavContent> </ng-template>
+        </li>
+      </ul>
+      <!-- end nav-->
+      <div [ngbNavOutlet]="nav" class="tab-content"></div>
+      <!-- end tab-content-->
+    </div>
+  </div>
+
+  
+  <div class="card">
+    <div class="card-body pb-1">
+
+  <div *ngIf='feeds; else loading' >
+    <div *ngFor='let article of feeds?.feed'>
+        <div class="container">
+            <img
+              class="me-2 rounded"
+              src="{{article.banner_image}}"
+              alt="Generic placeholder image"
+              width="100%" style="margin-bottom: 20px;"
+            />
+            <div class="w-100">
+              <h1 class="m-0">{{article.title}}</h1>
+              <p class="text-muted">
+                <small
+                  >about 2 minuts ago <span class="mx-1">⚬</span>
+                  <span>Public</span></small
+                >
+              </p>
+            </div>
+          </div>
+    
+          <hr class="m-0" />
+    
+          <div class="font-16 text-dark my-3">
+            {{article.summary}} - <a href="{{article.url}}">full story here...</a>
+          </div>
+    
+          <hr class="m-0" />
+    
+          <div class="my-1">
+            <a
+              href="javascript: void(0);"
+              class="btn btn-sm btn-link text-muted ps-0"
+              ><i class="mdi mdi-heart text-danger"></i> 2k Likes</a
+            >
+            <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"
+              ><i class="uil uil-comments-alt"></i> 200 Comments</a
+            >
+            <a href="javascript: void(0);" class="btn btn-sm btn-link text-muted"
+              ><i class="uil uil-share-alt"></i> Share</a
+            >
+          </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  
+
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+

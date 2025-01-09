@@ -1,0 +1,116 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+    <!-- Navbar -->
+    <div class="navbar navbar-expand-lg ">
+        <a class="navbar-brand fw-bold text-primary" href="#">
+          <img src="../../../assets/images/Logo-cropped.png" width="200px" />
+      </a>
+        <div class="collapse navbar-collapse justify-content-end">
+          <button class="btn btn-primary mx-2" routerLink="/pages-login-2">Login</button>
+          <button class="btn btn-secondary" routerLink="/register">Register</button>
+        </div>
+      </div>
+  
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+
+  
+    <!-- Hero Section -->
+   <!--
+   <div class="row align-items-center bg-primary text-white p-4 rounded mb-4">
+      <div class="col-md-6">
+        <h1 class="fw-bold">Welcome to StockWatch</h1>
+        <p>Your one-stop platform for market analysis, stock performance, and real-time updates.</p>
+        <button class="btn btn-light fw-bold" routerLink="/register">Get Started</button>
+      </div>
+      <div class="col-md-6">
+        <img src="assets/hero-image.svg" alt="Market Overview" class="img-fluid">
+      </div>
+    </div>
+    
+   --> 
+
+    <div class="row align-items-center bg-primary text-white p-4 rounded">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <app-news-slider></app-news-slider>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+      
+    <div class="row align-items-center bg-primary text-white p-4 rounded mb-4">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <app-services-section></app-services-section>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+
+    <!-- Top Gainers and Losers -->
+    <div class="row">
+       <div class="col-md-1"></div>
+      <div class="col-md-5">
+        <div class="card shadow-sm">
+          <div class="card-header bg-success text-white fw-bold">Top Gainers</div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Stock</th>
+                  <th style="text-align: right;">Price</th>
+                  <th style="text-align: right;">% Change</th>
+                  <th style="text-align: right;">Amount Change</th>
+                  <th style="text-align: right;">Volume</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let stock of topGainers">
+                  <td>{{ stock.ticker }}</td>
+                  <td style="text-align: right;">{{ stock.price }}</td>
+                  <td style="text-align: right;" class="text-success">{{ stock.change_percentage }}</td>
+                  <td style="text-align: right;" class="text-success">{{ stock.change_amount }}</td>
+                  <td style="text-align: right;" class="text-success">{{ stock.volume }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="card shadow-sm">
+          <div class="card-header bg-danger text-white fw-bold">Top Losers</div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Stock</th>
+                  <th style="text-align: right;">Price</th>
+                  <th style="text-align: right;">% Change</th>
+                  <th style="text-align: right;">Amount Change</th>
+                  <th style="text-align: right;">Volume</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let stock of topLosers">
+                    <td>{{ stock.ticker }}</td>
+                    <td style="text-align: right;">{{ stock.price }}</td>
+                    <td style="text-align: right;" class="text-success">{{ stock.change_percentage }}</td>
+                    <td style="text-align: right;" class="text-success">{{ stock.change_amount }}</td>
+                    <td style="text-align: right;" class="text-success">{{ stock.volume }}</td>
+                    </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  
+  
