@@ -63,6 +63,7 @@
     "ngx-mask": "^17.0.8",
     "ngx-pagination": "^6.0.3",
     "ngx-quill": "^26.0.4",
+    "ngx-webstorage": "^19.0.1",
     "nouislider": "^15.8.1",
     "quill": "^2.0.2",
     "rxjs": "^7.8.1",
