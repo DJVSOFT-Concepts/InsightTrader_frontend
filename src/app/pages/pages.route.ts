@@ -113,7 +113,7 @@ import { WatchlistAlertsComponent } from '../components/watchlist-alerts/watchli
 import { LoginComponent } from '../account/login/login.component'
 import { RegistrationComponent } from '../components/registration/registration.component'
 import { ChatComponent } from '../components/chat/chat.component'
-
+import { AuthenticatedGuard } from '../core/guards/authenticated.guard'
 
 export const PAGE_ROUTES: Route[] = [
   // Dashboard
@@ -126,44 +126,46 @@ export const PAGE_ROUTES: Route[] = [
   {
     path: 'earnings-calendar',
     component: EarningsCalendarComponent,
-    data: {title : 'Earnings Calendar'},
+    data: { title: 'Earnings Calendar' },
   },
   {
     path: 'real-time-stocks-prices',
     component: RealTimeStockPricesComponent,
-    data: {title: 'Real Time Stocks Prices'},
+    data: { title: 'Real Time Stocks Prices' },
   },
   {
     path: 'chat',
     component: ChatComponent,
-    data: {title: 'The Insider Trade Chat'},
+    data: { title: 'The Insider Trade Chat' },
   },
   {
     path: 'market-sentiment-analysis',
     component: MarketSentimentComponent,
-    data: {title: 'Market Sentiment Analysis'},
+    data: { title: 'Market Sentiment Analysis' },
   },
   {
     path: 'watchlist-alerts',
     component: WatchlistAlertsComponent,
-    data: {title: 'Watchlist'},
+    data: { title: 'Watchlist' },
   },
   {
     path: 'login',
     component: LoginComponent,
-    data: {title: 'Login'},
+    data: { title: 'Login' },
   },
   {
     path: 'registration',
     component: RegistrationComponent,
-    data: {title: 'Registration'},
+    data: { title: 'Registration' },
   },
 
   {
     path: '',
     component: DashboardComponent,
     data: { title: 'Dashboard' },
-  },{
+    canActivate: [AuthenticatedGuard],
+  },
+  {
     path: 'dashboard-projects',
     component: ProjectsComponent,
     data: { title: 'Project' },
@@ -181,7 +183,7 @@ export const PAGE_ROUTES: Route[] = [
     component: CalendarComponent,
     data: { title: 'Calendar' },
   },
-  
+
   {
     path: 'crm-projects',
     component: CRMProjectsComponent,

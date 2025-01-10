@@ -18,7 +18,7 @@ import { LandingComponent } from '../extrapage/landing/landing.component'
 import { Error404Component } from '../extrapage/404/404.component'
 import { Error500Component } from '../extrapage/500/500.component'
 import { HomepageComponent } from './homepage/homepage.component'
-
+import { AuthGuard } from '../core/guards/auth.guard'
 
 export const AUTH_ROUTES: Route[] = [
   {
@@ -27,14 +27,15 @@ export const AUTH_ROUTES: Route[] = [
     data: { title: 'Log In' },
   },
   {
-    path:'pages-homepage',
+    path: 'pages-homepage',
     component: HomepageComponent,
-    data: {title: 'The Insider Trade'},
+    data: { title: 'The Insider Trade' },
   },
   {
     path: 'pages-login-2',
     component: Login2Component,
     data: { title: 'Log In' },
+    canActivate: [AuthGuard],
   },
   {
     path: 'pages-register',
@@ -45,6 +46,7 @@ export const AUTH_ROUTES: Route[] = [
     path: 'pages-register-2',
     component: Register2Component,
     data: { title: 'Register' },
+    canActivate: [AuthGuard],
   },
   {
     path: 'pages-logout',
