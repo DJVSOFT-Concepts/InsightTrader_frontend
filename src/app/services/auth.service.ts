@@ -1,45 +1,80 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {of, Observable } from 'rxjs';
-import {tap, catchError} from 'rxjs/operators'
-import {Router} from '@angular/router';
+import { Injectable } from '@angular/core'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { of, Observable } from 'rxjs'
+import { tap, catchError } from 'rxjs/operators'
+import { Router } from '@angular/router'
 import { user } from '@/app/models/user.model'
+import { environment } from './environment'
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://127.0.0.1:8000/api/stocks/';
+  private apiUrl = environment.baseUrl
 
-  constructor(private http: HttpClient, private router:Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   register(user: user) {
-    const registerUrl: string = `${this.apiUrl}register/`;
-    this.http.post(registerUrl, user).pipe(
-      tap((response) => console.log('Registered:', response)),
-      catchError((error) => {
-        console.error('Error:', error);
-        return of(null);
-      })
-    ).subscribe();
+    const registerUrl: string = `${this.apiUrl}/users`
+    this.http
+      .post(registerUrl, user)
+      .pipe(
+        tap((response: any) => {
+          if (response && response.token) {
+            console.log('Login Successful:', response)
+            // Save user and token to localStorage
+            localStorage.setItem('user', JSON.stringify(response))
+            localStorage.setItem('token', response.token)
+            // Redirect to home page
+            this.router.navigate(['/'])
+          } else {
+            console.error('Login failed: Invalid response')
+          }
+        }),
+        catchError((error) => {
+          console.error('Error:', error)
+          return of(null)
+        })
+      )
+      .subscribe()
   }
 
   login(email: string, password: string) {
+    const loginUrl: string = `${this.apiUrl}/users/login`
+    const headers: HttpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
 
-    const loginUrl:string = `${this.apiUrl}login/`;
-    const headers:HttpHeaders = new HttpHeaders({'Content-Type':'application/json'});     
-
-    this.http.post<{refresh:string, access:string, first_name:string}>(loginUrl, {email: email, password:password},{headers}).subscribe(
-      (response) => {
-        console.log('Success:', response);
-        localStorage.setItem('accessToken', response.access);
-        localStorage.setItem('refreshToken',response.refresh);
-        localStorage.setItem('first_name',response.first_name);
-
-
-        this.router.navigate(['']);
-      },
-      (error) => {console.error('Error:', error)}
-    );
+    this.http
+      .post(loginUrl, { email, password }, { headers })
+      .pipe(
+        tap((response: any) => {
+          if (response && response.token) {
+            console.log('Login Successful:', response)
+            // Save user and token to localStorage
+            localStorage.setItem('user', JSON.stringify(response))
+            localStorage.setItem('token', response.token)
+            // Redirect to home page
+            this.router.navigate(['/'])
+          } else {
+            console.error('Login failed: Invalid response')
+          }
+        }),
+        catchError((error) => {
+          // Handle server or validation errors
+          if (error.status === 401) {
+            console.error('Invalid credentials:', error.error.message)
+            alert('Invalid email or password. Please try again.')
+          } else {
+            console.error('Login Error:', error)
+            alert('An error occurred during login. Please try again later.')
+          }
+          return of(null)
+        })
+      )
+      .subscribe()
   }
 }
