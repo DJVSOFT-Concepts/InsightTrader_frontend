@@ -3,5 +3,5 @@ export const environment = {
   alphaVantageApiKey: 'UNRHD8QFWSD75Q5E', // Replace with your API key
   //alphaVantageApiKey: 'QEPFED6K9UNZCMCW', // Replace with your API key
   //alphaVantageApiKey: 'demo', // Replace with your API key
-  baseUrl: 'http://localhost:5000/api',
+  baseUrl: 'https://insighttrader-backend.onrender.com/api',
 }
