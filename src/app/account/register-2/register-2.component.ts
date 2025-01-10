@@ -27,21 +27,21 @@ import { FormsModule } from '@angular/forms'
             <input
               class="form-control"
               type="text"
-              id="first_name"
-              name="first_name"
-              [(ngModel)] ="currentUser.first_name"
+              id="firstname"
+              name="firstname"
+              [(ngModel)]="currentUser.firstname"
               placeholder="Enter your first name"
               required
             />
           </div>
           <div class="mb-3">
-            <label for="last_name" class="form-label">Last Name</label>
+            <label for="lastname" class="form-label">Last Name</label>
             <input
               class="form-control"
               type="text"
-              id="last_name"
-              name="last_name"
-              [(ngModel)] ="currentUser.last_name"
+              id="lastname"
+              name="lastname"
+              [(ngModel)]="currentUser.lastname"
               placeholder="Enter your last name"
               required
             />
@@ -52,7 +52,7 @@ import { FormsModule } from '@angular/forms'
               class="form-control"
               type="email"
               id="emailaddress"
-              [(ngModel)] ="currentUser.email"
+              [(ngModel)]="currentUser.email"
               name="emailaddress"
               required
               placeholder="Enter your email"
@@ -66,7 +66,7 @@ import { FormsModule } from '@angular/forms'
               required
               id="password"
               name="password"
-              [(ngModel)] ="currentUser.password"
+              [(ngModel)]="currentUser.password"
               placeholder="Enter your password"
             />
           </div>
@@ -142,16 +142,12 @@ import { FormsModule } from '@angular/forms'
   styles: ``,
 })
 export class Register2Component implements OnInit {
-  currentUser: user = new user();
-  constructor(private authService:AuthService) {
-    
-  }
-  
-  ngOnInit(): void {
-    
-  }
+  currentUser: user = new user()
+  constructor(private authService: AuthService) {}
 
-  onSubmit():void {
-    this.authService.register(this.currentUser);
+  ngOnInit(): void {}
+
+  onSubmit(): void {
+    this.authService.register(this.currentUser)
   }
 }

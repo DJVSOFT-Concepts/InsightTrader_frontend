@@ -20,8 +20,7 @@ import { Store } from '@ngrx/store'
 import { changecolor } from '@store/layout/layout-action'
 import { getLayoutColor } from '@store/layout/layout-selector'
 import { DOCUMENT } from '@angular/common'
-import { RouterModule } from '@angular/router'
-import { login, logout } from '@store/authentication/authentication.actions'
+import { Router, RouterModule } from '@angular/router'
 
 type FullScreenTypes = {
   requestFullscreen?: () => Promise<void>
@@ -52,7 +51,7 @@ export class TopbarComponent {
   languages: Language[] = []
   selectedLanguage?: Language
   element!: FullScreenTypes
-  first_name:string | null = null;
+  firstname: string | null = null
 
   store = inject(Store)
   render = inject(Renderer2)
@@ -60,9 +59,10 @@ export class TopbarComponent {
   constructor(
     @Inject(DOCUMENT) private document: Document & FullScreenTypes,
     public languageService: LanguageService,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private router: Router
   ) {
-    this.first_name = localStorage.getItem('first_name');
+    this.firstname = localStorage.getItem('firstname')
   }
   @Output() settingsButtonClicked = new EventEmitter()
   @Output() mobileMenuButtonClicked = new EventEmitter()
@@ -180,6 +180,7 @@ export class TopbarComponent {
 
   // Logout
   logout() {
-    this.store.dispatch(logout())
+    this.router.navigate(['/pages-logout-2'])
+    localStorage.clear()
   }
 }
