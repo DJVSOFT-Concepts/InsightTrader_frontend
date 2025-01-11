@@ -48,7 +48,7 @@ export class AuthService {
       'Content-Type': 'application/json',
     })
 
-    this.http
+    return this.http
       .post(loginUrl, { email, password }, { headers })
       .pipe(
         tap((response: any) => {
@@ -59,20 +59,17 @@ export class AuthService {
             localStorage.setItem('token', response.token)
             // Redirect to home page
             this.router.navigate(['/'])
-          } else {
-            console.error('Login failed: Invalid response')
           }
         }),
         catchError((error) => {
           // Handle server or validation errors
+
+          let errorMessage = 'An error occurred during login. Please try again later.';
           if (error.status === 401) {
+            let errorMessage = 'Invalid email or password. Please try again.';
             console.error('Invalid credentials:', error.error.message)
-            alert('Invalid email or password. Please try again.')
-          } else {
-            console.error('Login Error:', error)
-            alert('An error occurred during login. Please try again later.')
-          }
-          return of(null)
+          } 
+          return of(errorMessage); // Return the error message
         })
       )
       .subscribe()
