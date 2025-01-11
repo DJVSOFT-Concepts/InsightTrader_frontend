@@ -47,6 +47,9 @@
             >
           </div>
         </div>
+        <div *ngIf="validationMessage" class="error-message">
+            {{validationMessage}}
+        </div>
         <div class="d-grid mb-0 text-center">
           <button class="btn btn-primary" type="submit">
             <i class="mdi mdi-login"></i> Log In

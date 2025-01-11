@@ -15,11 +15,17 @@ import { FormsModule } from '@angular/forms';
 export class Login2Component {
   email:string = '';
   pwd:string = '';
-  errorMessage:string | null = null;
+  validationMessage:string | null = null;
 
   constructor(private authService:AuthService, private router: Router) {}
 
   login():void {
-    this.authService.login(this.email, this.pwd);
+    this.authService.login(this.email, this.pwd).subscribe((message) => {
+      if(message) {
+        this.validationMessage = message;
+      } else {
+        this.validationMessage = '';
+      }
+    });
   }
 }

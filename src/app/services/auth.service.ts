@@ -42,7 +42,7 @@ export class AuthService {
       .subscribe()
   }
 
-  login(email: string, password: string) {
+  login(email: string, password: string) : Observable<string | null> {
     const loginUrl: string = `${this.apiUrl}/users/login`
     const headers: HttpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -71,7 +71,6 @@ export class AuthService {
           } 
           return of(errorMessage); // Return the error message
         })
-      )
-      .subscribe()
-  }
+      );
+    }
 }
