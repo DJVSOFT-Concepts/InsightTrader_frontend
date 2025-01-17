@@ -9,7 +9,12 @@ import {
 import { MENU } from '../shared/menu-meta'
 import { SimplebarAngularModule } from 'simplebar-angular'
 import { MenuItem } from '../shared/models/menu.model'
-import { NavigationEnd, Router, RouterModule } from '@angular/router'
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterModule,
+} from '@angular/router'
 import {
   NgbCollapse,
   NgbCollapseModule,
@@ -18,6 +23,7 @@ import {
 import { CommonModule } from '@angular/common'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { findAllParent, findMenuItem } from '../shared/helper/utils'
+import { GroupChatService } from '@/app/services/group-chat.service'
 
 @Component({
   selector: 'app-sidebar',
@@ -38,10 +44,12 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   menuItems: MenuItem[] = []
   activeMenuItems: string[] = []
   render = inject(Renderer2)
+  chatGroups: any[] = []
 
   constructor(
     router: Router,
-    public translate: TranslateService
+    public translate: TranslateService,
+    private groupChatService: GroupChatService
   ) {
     translate.setDefaultLang('en')
 
@@ -66,8 +74,46 @@ export class SidebarComponent implements OnInit, AfterViewInit {
   /**
    * initialize menuitems
    */
+  private loadChatGroups(): void {
+    this.groupChatService.getAllGroupChats().subscribe(
+      (data) => {
+        this.chatGroups = data
+        console.log('Chat Groups:', this.chatGroups)
+      },
+      (error) => {
+        console.error('Error loading chat groups:', error)
+      }
+    )
+  }
   initMenu(): void {
-    this.menuItems = MENU
+    this.menuItems = MENU // Initialize with existing menu items
+
+    this.groupChatService.getAllGroupChats().subscribe(
+      (groupChats: any[]) => {
+        const subMenus = groupChats.map((group) => ({
+          key: `chat-${group._id}`,
+          label: group.name,
+          link: `/chat/${group._id}`,
+          parentKey: 'apps-chat',
+        }))
+
+        const chatMenu: MenuItem = {
+          key: 'apps-chat',
+          icon: 'uil-comments-alt',
+          label: 'Chat',
+          link: '/chat',
+          collapsed: true,
+          subMenu: subMenus,
+        }
+
+        // Add the chat menu item to the menu
+        this.menuItems.push(chatMenu)
+        console.log('Updated Menu Items:', this.menuItems) // For debugging
+      },
+      (error) => {
+        console.error('Error fetching group chats:', error)
+      }
+    )
   }
 
   _activateMenu(): void {
