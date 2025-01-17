@@ -3,7 +3,9 @@
     <!-- Header Section -->
     <div class="col-12 mb-4">
       <h1 class="text-center">Dashboard</h1>
-      <h3 class="text-center text-muted">Your comprehensive financial overview</h3>
+      <h3 class="text-center text-muted">
+        Your comprehensive financial overview
+      </h3>
     </div>
   </div>
 
@@ -11,7 +13,7 @@
     <!-- Stock Prices Section -->
     <div class="col-md-5 mb-4">
       <div class="card">
-        <div class="card-header ">
+        <div class="card-header">
           <h4 class="card-title mb-0">Real Stock Prices</h4>
         </div>
         <div class="card-body">
@@ -27,7 +29,12 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let stock of stocks | paginate: { itemsPerPage: 15, currentPage: page }">
+                <tr
+                  *ngFor="
+                    let stock of stocks
+                      | paginate: { itemsPerPage: 15, currentPage: page }
+                  "
+                >
                   <td>{{ stock.symbol }}</td>
                   <td>{{ stock.open }}</td>
                   <td>{{ stock.high }}</td>
@@ -36,7 +43,9 @@
                 </tr>
               </tbody>
             </table>
-            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+            <pagination-controls
+              (pageChange)="page = $event"
+            ></pagination-controls>
           </div>
           <ng-template #noStockData>
             <p class="text-center text-warning">No stock data available.</p>
@@ -45,113 +54,111 @@
       </div>
     </div>
 
-  <!-- Earnings Calendar Section -->
-  <div class="col-md-7 mb-4">
-    <app-earnings-calendar></app-earnings-calendar>
+    <!-- Earnings Calendar Section -->
+    <div class="col-md-7 mb-4">
+      <app-earnings-calendar></app-earnings-calendar>
+    </div>
+
+    <div class="row">
+      <!-- Market News Section -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Market News</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li *ngFor="let news of marketNews">
+                <a href="{{ news.url }}" target="_blank">{{ news.title }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Overview Section -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Portfolio Overview</h5>
+          </div>
+          <div class="card-body">
+            <p>Total Investment: $10,000</p>
+            <p>Current Value: $12,500</p>
+            <p>Profit/Loss: +25%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Watchlist Section -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Watchlist</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li *ngFor="let stock of watchlist">
+                {{ stock.symbol }} - {{ stock.price }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stock Performance Chart Section -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Stock Performance</h5>
+          </div>
+          <div class="card-body">
+            <canvas id="stockChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Economic Indicators Section -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Economic Indicators</h5>
+          </div>
+          <div class="card-body">
+            <p>Inflation Rate: 3.2%</p>
+            <p>Unemployment Rate: 5.1%</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Currency Exchange Rates Section -->
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Currency Exchange Rates</h5>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Currency</th>
+                  <th>Exchange Rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let currency of exchangeRates">
+                  <td>{{ currency.name }}</td>
+                  <td>{{ currency.rate }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="row">
-    <!-- Market News Section -->
-    <div class="col-md-6 mb-4">
-      <div class="card">
-        <div class="card-header ">
-          <h5 class="card-title mb-0">Market News</h5>
-        </div>
-        <div class="card-body">
-          <ul>
-            <li *ngFor="let news of marketNews">
-              <a href="{{ news.url }}" target="_blank">{{ news.title }}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Overview Section -->
-    <div class="col-md-6 mb-4">
-      <div class="card">
-        <div class="card-header ">
-          <h5 class="card-title mb-0">Portfolio Overview</h5>
-        </div>
-        <div class="card-body">
-          <p>Total Investment: $10,000</p>
-          <p>Current Value: $12,500</p>
-          <p>Profit/Loss: +25%</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <!-- Watchlist Section -->
-    <div class="col-md-6 mb-4">
-      <div class="card">
-        <div class="card-header ">
-          <h5 class="card-title mb-0">Watchlist</h5>
-        </div>
-        <div class="card-body">
-          <ul>
-            <li *ngFor="let stock of watchlist">
-              {{ stock.symbol }} - {{ stock.price }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Stock Performance Chart Section -->
-    <div class="col-md-6 mb-4">
-      <div class="card">
-        <div class="card-header ">
-          <h5 class="card-title mb-0">Stock Performance</h5>
-        </div>
-        <div class="card-body">
-          <canvas id="stockChart"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <!-- Economic Indicators Section -->
-    <div class="col-md-6 mb-4">
-      <div class="card">
-        <div class="card-header">
-          <h5 class="card-title mb-0">Economic Indicators</h5>
-        </div>
-        <div class="card-body">
-          <p>Inflation Rate: 3.2%</p>
-          <p>Unemployment Rate: 5.1%</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Currency Exchange Rates Section -->
-    <div class="col-md-6 mb-4">
-      <div class="card">
-        <div class="card-header">
-          <h5 class="card-title mb-0">Currency Exchange Rates</h5>
-        </div>
-        <div class="card-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Currency</th>
-                <th>Exchange Rate</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let currency of exchangeRates">
-                <td>{{ currency.name }}</td>
-                <td>{{ currency.rate }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
 </div>
