@@ -19,8 +19,9 @@ export class Login2Component {
 
   constructor(private authService:AuthService, private router: Router) {}
 
-  login():void {
-    this.authService.login(this.email, this.pwd).subscribe((message) => {
+  login(event:Event):void {
+    event.preventDefault(); // Prevent page reload
+    this.authService.login(this.email, this.pwd).subscribe((message: string | null) => {
       if(message) {
         this.validationMessage = message;
       } else {
