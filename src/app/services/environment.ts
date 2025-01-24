@@ -5,4 +5,5 @@ export const environment = {
   //alphaVantageApiKey: 'demo', // Replace with your API key
   baseUrl: 'https://insighttrader-backend.onrender.com/api',
   socketUrl: 'https://insighttrader-backend.onrender.com/',
+  sentimentUrl: 'https://www.alphavantage.co/query?function=NEWS_SENTIMENT&apikey=UNRHD8QFWSD75Q5E',
 }

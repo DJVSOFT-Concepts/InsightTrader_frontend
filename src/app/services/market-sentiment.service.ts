@@ -12,7 +12,7 @@ export class MarketSentimentService {
 
   // Fetch news sentiment
   getNewsSentiment(): Observable<any> {
-    const url = `${environment.baseUrl}?function=NEWS_SENTIMENT&apikey=${environment.alphaVantageApiKey}`;
+    const url = `${environment.sentimentUrl}`;
     return this.http.get(url);
   }
 }
