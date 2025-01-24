@@ -1,15 +1,34 @@
-<div id="chatroot">
-    <stream-channel-list></stream-channel-list>
-    <stream-channel>
-        <stream-channel-header></stream-channel-header>
-        <stream-message-list></stream-message-list>
-        <stream-notification-list></stream-notification-list>
-        <stream-message-input></stream-message-input>
-        <stream-thread name="thread">
-        <stream-message-list mode="thread"></stream-message-list>
-        <stream-message-input mode="thread"></stream-message-input>
-        </stream-thread>
-    </stream-channel>
-    
-</div>
+<div class="chat-container">
+  <!-- Loader for when messages are being loaded -->
+  <div *ngIf="loadingMessages" class="loader">
+    <div class="spinner"></div>
+    <p>Loading messages...</p>
+  </div>
 
+  <!-- Messages Section -->
+  <div *ngIf="!loadingMessages && messages.length > 0" class="messages">
+    <div *ngFor="let message of messages" class="message">
+      <strong>
+        {{ message.sender?.firstname }} {{ message.sender?.lastname }}:
+      </strong>
+      <span>{{ message.message }}</span>
+      <small>{{ message.createdAt | date: 'short' }}</small>
+    </div>
+  </div>
+
+  <!-- No messages available -->
+  <div *ngIf="!loadingMessages && messages.length === 0" class="no-messages">
+    <p>No messages yet. Start the conversation!</p>
+  </div>
+
+  <!-- Input Section -->
+  <div class="message-input">
+    <input
+      type="text"
+      [(ngModel)]="newMessage"
+      placeholder="Type a message"
+      (keyup.enter)="sendMessage()"
+    />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>

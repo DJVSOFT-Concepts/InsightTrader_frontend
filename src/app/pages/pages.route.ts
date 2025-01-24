@@ -135,8 +135,13 @@ export const PAGE_ROUTES: Route[] = [
   },
   {
     path: 'chat',
-    component: ChatComponent,
-    data: { title: 'The Insider Trade Chat' },
+    children: [
+      {
+        path: ':id',
+        component: ChatComponent,
+        data: { title: 'Chat Details' },
+      },
+    ],
   },
   {
     path: 'market-sentiment-analysis',
