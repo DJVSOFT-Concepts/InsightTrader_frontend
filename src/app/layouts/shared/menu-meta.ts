@@ -69,6 +69,12 @@ export const MENU: MenuItem[] = [
     label: 'Market Sentiment Analysis',
     link: '/market-sentiment-analysis',
   },
+  {
+     key: 'apps-chat',
+     icon: 'uil-comments-alt',
+     label: 'chat',
+     link: '/apps-chat',
+  },
   
   // {
   //   key: 'apps-calendar',
