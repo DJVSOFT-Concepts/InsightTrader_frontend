@@ -145,7 +145,7 @@ export const PAGE_ROUTES: Route[] = [
     ],
   },
   {
-    path: 'app-chat',
+    path: 'apps-chat',
     children: [
       {
         path: ':id',
