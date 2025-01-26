@@ -22,11 +22,11 @@ import { UserDetailComponent } from './components/user-detail.component'
 
     <div class="row">
       <!-- start chat users-->
-      <div class="col-xxl-3 col-xl-6 order-xl-1">
+      <!--<div class="col-xxl-3 col-xl-6 order-xl-1">
         <app-chat-user
           (profileDetail)="receiveDataFromChild($event)"
         ></app-chat-user>
-      </div>
+      </div>-->
       <!-- end chat users-->
 
       <!-- chat area -->
@@ -36,9 +36,9 @@ import { UserDetailComponent } from './components/user-detail.component'
       <!-- end chat area-->
 
       <!-- start user detail -->
-      <div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2">
+      <!--<div class="col-xxl-3 col-xl-6 order-xl-1 order-xxl-2">
         <app-user-detail [profileDetail]="profileDetail"></app-user-detail>
-      </div>
+      </div>-->
       <!-- end col -->
       <!-- end user detail -->
     </div>
