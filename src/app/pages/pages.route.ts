@@ -114,7 +114,7 @@ import { LoginComponent } from '../account/login/login.component'
 import { RegistrationComponent } from '../components/registration/registration.component'
 import { ChatComponent } from '../components/chat/chat.component'
 import { AuthenticatedGuard } from '../core/guards/authenticated.guard'
-import { AppChatComponent } from './apps/chat/chat.component'
+import { AppChatComponent } from '../../app/pages/apps/chat/chat.component'
 
 export const PAGE_ROUTES: Route[] = [
   // Dashboard
