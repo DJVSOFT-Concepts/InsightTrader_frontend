@@ -45,7 +45,7 @@ import { UserDetailComponent } from './components/user-detail.component'
     <!-- end row-->`,
   styles: ``,
 })
-export class ChatComponent {
+export class AppChatComponent {
   profileDetail!: ChatUser
 
   receiveDataFromChild(data: ChatUser) {

@@ -114,6 +114,7 @@ import { LoginComponent } from '../account/login/login.component'
 import { RegistrationComponent } from '../components/registration/registration.component'
 import { ChatComponent } from '../components/chat/chat.component'
 import { AuthenticatedGuard } from '../core/guards/authenticated.guard'
+import { AppChatComponent } from './apps/chat/chat.component'
 
 export const PAGE_ROUTES: Route[] = [
   // Dashboard
@@ -139,6 +140,16 @@ export const PAGE_ROUTES: Route[] = [
       {
         path: ':id',
         component: ChatComponent,
+        data: { title: 'Chat Details' },
+      },
+    ],
+  },
+  {
+    path: 'app-chat',
+    children: [
+      {
+        path: ':id',
+        component: AppChatComponent,
         data: { title: 'Chat Details' },
       },
     ],
